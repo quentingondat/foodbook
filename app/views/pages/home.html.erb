@@ -5,3 +5,68 @@
     <a class="btn btn-primary btn-lg">GET IT</a>
   </div>
 </div>
+
+
+<div class="scroller-container">
+  <button class="scrollbar-button prev">
+    <span><i class="fa fa-chevron-left"></i></span>
+  </button>
+  <div class="frame" id="category-scroll">
+
+    <ul class="slidee">
+      <% Category.all.each do |category| %>
+        <li class="category"><%= category.name %></li>
+      <% end %>
+    </ul>
+
+  </div>
+  <button class="scrollbar-button next">
+    <span><i class="fa fa-chevron-right"></i></span>
+  </button>
+</div>
+
+
+
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    var $frame = $('#category-scroll');
+    var $wrap  = $frame.parent();
+
+    $frame.sly({
+      horizontal: 1,
+      itemNav: 'centered',
+      smart: 1,
+      mouseDragging: 1,
+      touchDragging: 1,
+      releaseSwing: 1,
+      startAt: 4,
+      activateOn: 'click',
+      scrollBy: 1,
+      speed: 300,
+      elasticBounds: 1,
+      dragHandle: 1,
+      dynamicHandle: 1,
+      clickBar: 1,
+
+      prev: $wrap.find('.prev'),
+      next: $wrap.find('.next')
+    });
+
+    var isDragging = false;
+    $('.category')
+    .mousedown(function() {
+        isDragging = false;
+    })
+    .mousemove(function() {
+        isDragging = true;
+     })
+    .mouseup(function() {
+        var wasDragging = isDragging;
+        isDragging = false;
+        if (!wasDragging) {
+            $(this).toggleClass('selected');
+        }
+    });
+  <% end %>
+<% end %>

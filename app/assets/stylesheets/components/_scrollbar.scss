@@ -1,0 +1,56 @@
+.scroller-container {
+  display: flex;
+}
+
+.scrollbar-button {
+  height: 40px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: $blue;
+}
+
+.frame {
+  width: calc(100vw - 60px);
+  height: 40px;
+  padding: 0;
+
+}
+.frame .slidee {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  border-bottom: solid 1px #eee;
+  box-shadow: 0 1px 3px #ddd;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: 'Merriweather Sans', serif;
+  font-weight: 700;
+  color: $light-blue;
+  float: left;
+  padding: 0;
+  width: 120px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.category:hover {
+  background-color: #f5f5f5;
+}
+
+.frame .slidee .selected {
+  background-color: $blue!important;
+  color: white!important;
+}
