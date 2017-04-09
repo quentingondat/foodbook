@@ -5,6 +5,16 @@
   display: flex;
 }
 
+.search-bar-fixed-margin {
+  margin-top: 101px;
+}
+
+.search-bar-fixed {
+  top: 0;
+  z-index: 100;
+  position: fixed;
+}
+
 .search-bar-address {
   flex: 3;
   display: flex;

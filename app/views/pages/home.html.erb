@@ -8,7 +8,7 @@
           <h1>moins de 7€</h1>
           <br>
           <br>
-          <p>Notre réseau de restaurateurs</p>
+          <p>Rejoignez notre réseau de restaurateurs</p>
           <p>partenaires qui vous proposent</p>
           <p>leurs meilleurs plats à 7€</p>
         </div>
@@ -83,26 +83,11 @@
 </div>
 
 <div class="dishes-container">
+  <div class="dishes-header">
+    <h2>Au menu de demain...</h2>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="dish-card">
-          <a class="dish-picture" href="/" style="background-image: url('<%= cl_image_path 'home-banner_udpi0p.jpg' %>')"></a>
-          <div class="dish-text">
-            <h3 class="dish-title">Guacamole</h3>
-            <p class="dish-subtitle">Des avocats coupés en dés, délicieusement assaisonnés au citron vert. (Vendu sans pain)</p>
-          </div>
-          <div class="dish-footer">
-            <div class="dish-restaurant">
-              <span>Les petites bouchées</span>
-            </div>
-            <button class="btn dish-button">
-              <span><i class="fa fa-chevron-right"></i></span>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="dish-card">
           <a class="dish-picture" href="/" style="background-image: url('<%= cl_image_path 'home-banner_udpi0p.jpg' %>')"></a>
@@ -234,9 +219,10 @@
   </div>
 </div>
 
-<% Category.all.each do |cat| %>
-  <%= cat.name  %>
-<% end %>
+<div class="jumbotron map-header">
+  <span>Nos restaurateurs partenaires</span>
+</div>
+<div class="map-container" id="map"></div>
 
 
 <% content_for(:js) do %>
@@ -279,5 +265,29 @@
             $(this).toggleClass('selected');
         }
     });
+
+    $(document).ready(function() {
+      $(window).scroll(function () {
+      if ($(window).scrollTop() > $('.banner').height()) {
+        $('.search-bar-container').addClass('search-bar-fixed');
+        $('.dishes-container').addClass('search-bar-fixed-margin');
+      }
+      if ($(window).scrollTop() < $('.banner').height()) {
+        $('.search-bar-container').removeClass('search-bar-fixed');
+        $('.dishes-container').removeClass('search-bar-fixed-margin');
+      }
+    });
+    var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false } }, function() {
+        markers = []
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+  });
   <% end %>
 <% end %>
