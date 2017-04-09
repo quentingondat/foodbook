@@ -1,4 +1,21 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+.home-features {
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: $blue;
+  }
+  p {
+    color: $light-blue;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+  i {
+    font-size: 50px;
+    color: $yellow;
+  }
+}
+
+.dishes-container {
+  background-color: $light-gray;
+  padding: 100px;
+}

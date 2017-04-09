@@ -1,30 +1,121 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.4) 50%), url('<%= cl_image_path "home-banner_udpi0p.jpg"%>');">
-  <div class="banner-content">
-    <h1>Mangez pour</h1>
-    <h1>moins de 8€</h1>
-    <a class="btn btn-primary btn-lg">GET IT</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="banner-content">
+          <br>
+          <h1>Mangez ce midi pour</h1>
+          <h1>moins de 7€</h1>
+          <br>
+          <br>
+          <p>Notre réseau de restaurateurs</p>
+          <p>partenaires qui vous proposent</p>
+          <p>leurs meilleurs plats à 7€</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="form-container">
+          <div class="form">
+            <div class="form-panel one">
+              <div class="form-header">
+                <h1>Essayez la Cantine !</h1>
+              </div>
+              <div class="form-content">
+                <form>
+                  <div class="form-group">
+                    <label for="email"><i class="fa fa-envelope"></i> Adresse Email</label>
+                    <input type="email" id="email" name="email" required="required"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="password"><i class="fa fa-lock"></i> Password</label>
+                    <input type="password" id="password" name="password" required="required"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="cpassword"><i class="fa fa-lock"></i> Confirmation</label>
+                    <input type="password" id="cpassword" name="cpassword" required="required"/>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit">Créer mon compte</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="search-bar-container">
+  <div class="search-bar">
+    <div class="search-bar-address">
+      <div class="search-bar-address-marker">
+        <span><i class="fa fa-map-marker"></i></span>
+      </div>
+      <div class="search-bar-address-input-wrapper">
+        <div class="search-bar-address-icon">
+          <span><i class="fa fa-search"></i></span>
+        </div>
+        <input type="text" name="address" id="address" placeholder="Rechercher un restaurant...">
+      </div>
+    </div>
+  </div>
+  <div class="scroller-container">
+    <button class="scrollbar-button prev">
+      <span><i class="fa fa-chevron-left"></i></span>
+    </button>
+    <div class="frame" id="category-scroll">
+
+      <ul class="slidee">
+        <% Category.all.each do |category| %>
+          <li class="category"><%= category.name %></li>
+        <% end %>
+      </ul>
+
+    </div>
+    <button class="scrollbar-button next">
+      <span><i class="fa fa-chevron-right"></i></span>
+    </button>
   </div>
 </div>
 
-
-<div class="scroller-container">
-  <button class="scrollbar-button prev">
-    <span><i class="fa fa-chevron-left"></i></span>
-  </button>
-  <div class="frame" id="category-scroll">
-
-    <ul class="slidee">
-      <% Category.all.each do |category| %>
-        <li class="category"><%= category.name %></li>
-      <% end %>
-    </ul>
-
+<div class="dishes-container">
+  <div class="dish-card">
+    <a class="dish-picture" href="/" style="background-image: url('<%= cl_image_path 'home-banner_udpi0p.jpg' %>')"></a>
+    <div class="dish-text">
+      <h3 class="dish-title">Guacamole</h3>
+      <p class="dish-subtitle">Des avocats coupés en dés, délicieusement assaisonnés au citron vert. (Vendu sans pain)</p>
+    </div>
+    <div class="dish-footer">
+      <div class="dish-restaurant">
+        <span>Les petites bouchées</span>
+      </div>
+    </div>
   </div>
-  <button class="scrollbar-button next">
-    <span><i class="fa fa-chevron-right"></i></span>
-  </button>
 </div>
 
+<div class="container text-center padded home-features">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <span><i class="fa fa-envelope"></i></span>
+      <h2>Discover the world</h2>
+      <p>The earth is your new home.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <span><i class="fa fa-envelope"></i></span>
+      <h2>Pay online</h2>
+      <p>No cash issues anymore.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <span><i class="fa fa-envelope"></i></span>
+      <h2>Meet people</h2>
+      <p>Discover new culture and lifestyle.</p>
+    </div>
+  </div>
+</div>
 
 
 

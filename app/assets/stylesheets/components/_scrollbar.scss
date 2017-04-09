@@ -1,5 +1,6 @@
 .scroller-container {
   display: flex;
+  border-bottom: solid 1px #eee;
 }
 
 .scrollbar-button {
@@ -25,7 +26,7 @@
   padding: 0;
   height: 100%;
   list-style: none;
-  border-bottom: solid 1px #eee;
+
   box-shadow: 0 1px 3px #ddd;
 }
 

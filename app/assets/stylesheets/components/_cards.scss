@@ -1,0 +1,69 @@
+.dish-card {
+  height: 410px;
+  width: 310px;
+  background: #FFF;
+  box-shadow: 0 2px 5px 0 rgba(124, 106, 106, 0.3);
+  position: relative;
+}
+
+.dish-card {
+  img {
+    background-color: $light-gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.dish-picture {
+  background-color: $light-gray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 210px;
+  width: 100%;
+  display: block;
+}
+
+.dish-text {
+  height: 150px;
+  width: 100%;
+  padding: 0px 30px 25px;
+}
+
+.dish-title {
+  color: $blue;
+  font-size: 19px;
+  font-weight: 700;
+
+}
+
+.dish-subtitle {
+  color: $light-blue;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.dish-footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #eff1f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 30px;
+}
+
+.dish-restaurant {
+  align-self: flex-start;
+  text-transform: uppercase;
+  color: $blue;
+  font-family: 'Merriweather Sans', serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.dish-button {
+  align-self: flex-end;
+}

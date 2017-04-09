@@ -1,0 +1,94 @@
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Merriweather Sans', serif;
+}
+
+.form {
+  background: #FFFFFF;
+  width: 400px;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0 20px;
+}
+
+.form-group label {
+  display: block;
+  margin: 0 0 10px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.form-group input {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.form-group button {
+  margin: 10px 0px;
+  outline: none;
+  border: 0;
+  background-color: $blue;
+  width: 100%;
+  padding: 8px 20px;
+  letter-spacing: 1.5px;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+  transition:all .3s
+}
+
+.form-group button:hover {
+  color: white;
+  background: $light-blue;
+}
+
+
+.form-group .form-remember {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.form-panel {
+  padding: 40px 40px 40px;
+  box-sizing: border-box;
+}
+
+.form-header {
+  margin: 0 0 40px;
+}
+.form-header h1 {
+  font-family: 'Merriweather Sans', serif;
+  color: $blue;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
